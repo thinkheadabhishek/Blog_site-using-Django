@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block page_title %}
+Blog Home Page
+{% endblock %}
+
+
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'blogs/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+    <header>
+        <img src="{% static 'images/my_image.jpg'%}" alt="Image">
+        <h1> Welcome to my blog</h1>
+    </header>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, maiores!</p>
+</section>    
+<section id="latest-posts">
+        <h2>My Latest Blogs</h2>
+        <ul>
+            {% for post in posts %}
+            <li>{% include "blogs/includes/post.html"%}</li>
+            {% endfor %}
+        </ul>
+  
+</section>
+
+<section id="about">
+    <h2>What I Do</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempora a aperiam tempore necessitatibus repudiandae adipisci odio suscipit. Rem, eveniet.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, odio.</p>
+</section>
+{% endblock %}
